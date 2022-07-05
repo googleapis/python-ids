@@ -2011,7 +2011,6 @@ def test_ids_transport_auth_adc(transport_class):
     [
         transports.IDSGrpcTransport,
         transports.IDSGrpcAsyncIOTransport,
-        transports.IDSRestTransport,
     ],
 )
 def test_ids_transport_auth_gdch_credentials(transport_class):
