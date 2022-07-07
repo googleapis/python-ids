@@ -3,7 +3,7 @@ Python Client for Cloud IDS API
 
 |stable| |pypi| |versions|
 
-`Cloud IDS API`_: 
+`Cloud IDS API`_:  monitors your networks, and it alerts you when it detects malicious activity. Cloud IDS is powered by Palo Alto Networks.
 
 - `Client Library Documentation`_
 - `Product Documentation`_
