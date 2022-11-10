@@ -16,7 +16,18 @@
 from collections import OrderedDict
 import os
 import re
-from typing import Dict, Mapping, Optional, Sequence, Tuple, Type, Union, cast
+from typing import (
+    Dict,
+    Mapping,
+    MutableMapping,
+    MutableSequence,
+    Optional,
+    Sequence,
+    Tuple,
+    Type,
+    Union,
+    cast,
+)
 
 from google.api_core import client_options as client_options_lib
 from google.api_core import exceptions as core_exceptions
@@ -61,7 +72,7 @@ class IDSClientMeta(type):
 
     def get_transport_class(
         cls,
-        label: str = None,
+        label: Optional[str] = None,
     ) -> Type[IDSTransport]:
         """Returns an appropriate transport class.
 
@@ -336,7 +347,7 @@ class IDSClient(metaclass=IDSClientMeta):
         self,
         *,
         credentials: Optional[ga_credentials.Credentials] = None,
-        transport: Union[str, IDSTransport, None] = None,
+        transport: Optional[Union[str, IDSTransport]] = None,
         client_options: Optional[Union[client_options_lib.ClientOptions, dict]] = None,
         client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
     ) -> None:
@@ -434,11 +445,11 @@ class IDSClient(metaclass=IDSClientMeta):
 
     def list_endpoints(
         self,
-        request: Union[ids.ListEndpointsRequest, dict] = None,
+        request: Optional[Union[ids.ListEndpointsRequest, dict]] = None,
         *,
-        parent: str = None,
+        parent: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> pagers.ListEndpointsPager:
         r"""Lists Endpoints in a given project and location.
@@ -546,11 +557,11 @@ class IDSClient(metaclass=IDSClientMeta):
 
     def get_endpoint(
         self,
-        request: Union[ids.GetEndpointRequest, dict] = None,
+        request: Optional[Union[ids.GetEndpointRequest, dict]] = None,
         *,
-        name: str = None,
+        name: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> ids.Endpoint:
         r"""Gets details of a single Endpoint.
@@ -649,13 +660,13 @@ class IDSClient(metaclass=IDSClientMeta):
 
     def create_endpoint(
         self,
-        request: Union[ids.CreateEndpointRequest, dict] = None,
+        request: Optional[Union[ids.CreateEndpointRequest, dict]] = None,
         *,
-        parent: str = None,
-        endpoint: ids.Endpoint = None,
-        endpoint_id: str = None,
+        parent: Optional[str] = None,
+        endpoint: Optional[ids.Endpoint] = None,
+        endpoint_id: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> operation.Operation:
         r"""Creates a new Endpoint in a given project and
@@ -791,11 +802,11 @@ class IDSClient(metaclass=IDSClientMeta):
 
     def delete_endpoint(
         self,
-        request: Union[ids.DeleteEndpointRequest, dict] = None,
+        request: Optional[Union[ids.DeleteEndpointRequest, dict]] = None,
         *,
-        name: str = None,
+        name: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> operation.Operation:
         r"""Deletes a single Endpoint.
